@@ -1,65 +1,71 @@
 /* Import Google Font - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-body{
+body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   padding: 0 10px;
-  background: #675AFE;
+  background: #675afe;
 }
-::selection{
+::selection {
   color: #fff;
-  background: #675AFE;
+  background: #675afe;
 }
-.wrapper{
+.full body {
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper {
   width: 370px;
   padding: 30px;
   border-radius: 7px;
   background: #fff;
   box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
-.wrapper header{
+.wrapper header {
   font-size: 28px;
   font-weight: 500;
   text-align: center;
 }
-.wrapper form{
+.wrapper form {
   margin: 40px 0 20px 0;
 }
-form :where(input, select, button){
+form :where(input, select, button) {
   width: 100%;
   outline: none;
   border-radius: 5px;
   border: none;
 }
-form p{
+form p {
   font-size: 18px;
   margin-bottom: 5px;
 }
-form input{
+form input {
   height: 50px;
   font-size: 17px;
   padding: 0 15px;
   border: 1px solid #999;
 }
-form input:focus{
+form input:focus {
   padding: 0 14px;
-  border: 2px solid #675AFE;
+  border: 2px solid #675afe;
 }
-form .drop-list{
+form .drop-list {
   display: flex;
   margin-top: 20px;
   align-items: center;
   justify-content: space-between;
 }
-.drop-list .select-box{
+.drop-list .select-box {
   display: flex;
   width: 115px;
   height: 45px;
@@ -68,43 +74,229 @@ form .drop-list{
   justify-content: center;
   border: 1px solid #999;
 }
-.select-box img{
+.select-box img {
   max-width: 21px;
 }
-.select-box select{
+.select-box select {
   width: auto;
   font-size: 16px;
   background: none;
   margin: 0 -5px 0 5px;
 }
-.select-box select::-webkit-scrollbar{
+.select-box select::-webkit-scrollbar {
   width: 8px;
 }
-.select-box select::-webkit-scrollbar-track{
+.select-box select::-webkit-scrollbar-track {
   background: #fff;
 }
-.select-box select::-webkit-scrollbar-thumb{
+.select-box select::-webkit-scrollbar-thumb {
   background: #888;
   border-radius: 8px;
   border-right: 2px solid #ffffff;
 }
-.drop-list .icon{
+.drop-list .icon {
   cursor: pointer;
   margin-top: 30px;
   font-size: 22px;
 }
-form .exchange-rate{
+form .exchange-rate {
   font-size: 17px;
   margin: 20px 0 30px;
 }
-form button{
+form button {
   height: 52px;
   color: #fff;
   font-size: 17px;
   cursor: pointer;
-  background: #675AFE;
+  background: #675afe;
   transition: 0.3s ease;
 }
-form button:hover{
+form button:hover {
   background: #4534fe;
+}
+
+/* Weather Part */
+::selection {
+  color: #fff;
+  background: #43affc;
+}
+.wrapper {
+  width: 400px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 7px 7px 20px rgba(0, 0, 0, 0.05);
+}
+.wrapper header {
+  display: flex;
+  font-size: 21px;
+  font-weight: 500;
+  color: #43affc;
+  padding: 16px 15px;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+}
+header i {
+  font-size: 0em;
+  cursor: pointer;
+  margin-right: 8px;
+}
+.wrapper.active header i {
+  margin-left: 5px;
+  font-size: 30px;
+}
+.wrapper .input-part {
+  margin: 20px 25px 30px;
+}
+.wrapper.active .input-part {
+  display: none;
+}
+.input-part .info-txt {
+  display: none;
+  font-size: 17px;
+  text-align: center;
+  padding: 12px 10px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.input-part .info-txt.error {
+  color: #721c24;
+  display: block;
+  background: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
+.input-part .info-txt.pending {
+  color: #0c5460;
+  display: block;
+  background: #d1ecf1;
+  border: 1px solid #bee5eb;
+}
+.input-part :where(input, button) {
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  border-radius: 7px;
+}
+.input-part input {
+  text-align: center;
+  padding: 0 15px;
+  border: 1px solid #ccc;
+}
+.input-part input:is(:focus, :valid) {
+  border: 2px solid #43affc;
+}
+.input-part input::placeholder {
+  color: #bfbfbf;
+}
+.input-part .separator {
+  height: 1px;
+  width: 100%;
+  margin: 25px 0;
+  background: #ccc;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.separator::before {
+  content: 'or';
+  color: #b3b3b3;
+  font-size: 19px;
+  padding: 0 15px;
+  background: #fff;
+}
+.input-part button {
+  color: #fff;
+  cursor: pointer;
+  background: #43affc;
+  transition: 0.3s ease;
+}
+.input-part button:hover {
+  background: #1d9ffc;
+}
+
+.wrapper .weather-part {
+  display: none;
+  margin: 30px 0 0;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.wrapper.active .weather-part {
+  display: flex;
+}
+.weather-part img {
+  max-width: 125px;
+}
+.weather-part .temp {
+  display: flex;
+  font-weight: 500;
+  font-size: 72px;
+}
+.weather-part .temp .numb {
+  font-weight: 600;
+}
+.weather-part .temp .deg {
+  font-size: 40px;
+  display: block;
+  margin: 10px 5px 0 0;
+}
+.weather-part .weather {
+  font-size: 21px;
+  text-align: center;
+  margin: -5px 20px 15px;
+}
+.weather-part .location {
+  display: flex;
+  font-size: 19px;
+  padding: 0 20px;
+  text-align: center;
+  margin-bottom: 30px;
+  align-items: flex-start;
+}
+.location i {
+  font-size: 22px;
+  margin: 4px 5px 0 0;
+}
+.weather-part .bottom-details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid #ccc;
+}
+.bottom-details .column {
+  display: flex;
+  width: 100%;
+  padding: 15px 0;
+  align-items: center;
+  justify-content: center;
+}
+.column i {
+  color: #5dbbff;
+  font-size: 40px;
+}
+.column.humidity {
+  border-left: 1px solid #ccc;
+}
+.column .details {
+  margin-left: 3px;
+}
+.details .temp,
+.humidity span {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: -3px;
+}
+.details .temp .deg {
+  margin: 0;
+  font-size: 17px;
+  padding: 0 2px 0 1px;
+}
+.column .details p {
+  font-size: 14px;
+  margin-top: -6px;
+}
+.humidity i {
+  font-size: 37px;
 }
