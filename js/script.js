@@ -11,7 +11,7 @@ for (let i = 0; i < dropList.length; i++) {
         ? currency_code == 'USD'
           ? 'selected'
           : ''
-        : currency_code == 'BDT'
+        : currency_code == 'NPR'
         ? 'selected'
         : '';
     // creating option tag with passing currency code as a text and value
